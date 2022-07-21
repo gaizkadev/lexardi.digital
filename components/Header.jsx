@@ -2,15 +2,18 @@
 import Image from "next/image";
 import { useState } from "react";
 import { BsHeartHalf } from "react-icons/bs";
+import Link from "next/link";
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
 
   return (
-    <header className="flex items-center justify-between bg-red-200 px-12 py-8">
-      <p>logo</p>
+    <header className="flex items-center justify-between px-12 py-8">
+      <Link href="/">
+        <a>logo</a>
+      </Link>
       <nav>
-        <section className="flex">
+        <div className="flex">
           <div
             className="space-y-2"
             onClick={() => setIsNavOpen((prev) => !prev)} // toggle isNavOpen state on click
@@ -22,12 +25,12 @@ export default function Header() {
           <div
             className={
               isNavOpen
-                ? "block absolute w-full h-full top-0 left-0 flex-col z-10 bg-black"
+                ? "block absolute w-full top-0 left-0 flex-col z-10 bg-black h-full overflow-hidden"
                 : "hidden"
             }
           >
             <div
-              className="absolute -top-1 right-0 px-12 py-8"
+              className="absolute -top-1 -right-3 px-12 py-8"
               onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
             >
               <svg
@@ -47,13 +50,19 @@ export default function Header() {
               <div className="lg:px-12 lg:py-12 sm:px-6 sm:py-6">
                 <ul>
                   <li className="text-white lg:text-8xl md:text-6xl sm:text-4xl mb-6">
-                    <a href="/blog">Blog</a>
+                    <Link href={"/blog"}>
+                      <a>Blog</a>
+                    </Link>
                   </li>
                   <li className="text-white lg:text-8xl md:text-6xl sm:text-4xl mb-6">
-                    <a href="/about">About</a>
+                    <Link href={"/about"}>
+                      <a>About</a>
+                    </Link>
                   </li>
                   <li className="text-white lg:text-8xl md:text-6xl sm:text-4xl">
-                    <a href="/contact">Contact</a>
+                    <Link href={"/contact"}>
+                      <a>Contact</a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -65,7 +74,7 @@ export default function Header() {
                   alt="Icon Illustrator"
                 />
               </div>
-              <div className="bg-white lg:px-12 lg:py-12 h-screen sm:px-2">
+              <div className="bg-white lg:px-12 lg:py-12 sm:px-2">
                 <span className="flex items-center mb-8 lg:mt-8 sm:mt-20 lg:justify-start sm:justify-center">
                   <Image src="/logo.png" width={32} height="32" alt="Logo" />
                   <p className="ml-2 lg:text-lg sm:text-xs">
@@ -99,7 +108,7 @@ export default function Header() {
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </nav>
     </header>
   );
