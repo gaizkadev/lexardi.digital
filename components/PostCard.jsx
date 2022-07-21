@@ -1,7 +1,7 @@
 import Image from "next/image";
 const PostCard = ({ post }) => {
   return (
-    <div className="p-12 container mx-auto">
+    <div className="p-12 ">
       <div className="flex flex-col gap-12 md:flex-row max-w-6xl">
         <Image
           alt="Image"
