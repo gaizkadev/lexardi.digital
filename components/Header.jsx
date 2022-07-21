@@ -1,0 +1,106 @@
+// full code link: https://codesandbox.io/s/tailwind-react-hamburger-menu-tjhfyx
+import Image from "next/image";
+import { useState } from "react";
+import { BsHeartHalf } from "react-icons/bs";
+
+export default function Header() {
+  const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
+
+  return (
+    <header className="flex items-center justify-between bg-red-200 px-12 py-8">
+      <p>logo</p>
+      <nav>
+        <section className="flex">
+          <div
+            className="space-y-2"
+            onClick={() => setIsNavOpen((prev) => !prev)} // toggle isNavOpen state on click
+          >
+            <span className="block h-0.5 w-8  bg-gray-600"></span>
+            <span className="block h-0.5 w-8  bg-gray-600"></span>
+          </div>
+
+          <div
+            className={
+              isNavOpen
+                ? "block absolute w-full h-full top-0 left-0 flex-col z-10 bg-black"
+                : "hidden"
+            }
+          >
+            <div
+              className="absolute -top-1 right-0 px-12 py-8"
+              onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
+            >
+              <svg
+                className="h-8 w-8 text-gray-600"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </div>
+            <div className="grid grid-cols-2">
+              <div className="lg:px-12 lg:py-12 sm:px-6 sm:py-6">
+                <ul>
+                  <li className="text-white lg:text-8xl md:text-6xl sm:text-4xl mb-6">
+                    <a href="/blog">Blog</a>
+                  </li>
+                  <li className="text-white lg:text-8xl md:text-6xl sm:text-4xl mb-6">
+                    <a href="/about">About</a>
+                  </li>
+                  <li className="text-white lg:text-8xl md:text-6xl sm:text-4xl">
+                    <a href="/contact">Contact</a>
+                  </li>
+                </ul>
+              </div>
+              <div className="absolute bottom-10">
+                <Image
+                  src="/icons/adobeillustrator.svg"
+                  width={32}
+                  height={32}
+                  alt="Icon Illustrator"
+                />
+              </div>
+              <div className="bg-white lg:px-12 lg:py-12 h-screen sm:px-2">
+                <span className="flex items-center mb-8 lg:mt-8 sm:mt-20 lg:justify-start sm:justify-center">
+                  <Image src="/logo.png" width={32} height="32" alt="Logo" />
+                  <p className="ml-2 lg:text-lg sm:text-xs">
+                    gaizka | Frontend Developer
+                  </p>
+                </span>
+                <span className="bottom-10 right-10 absolute items-center flex text-xs font-bold">
+                  Coded with &nbsp; <BsHeartHalf /> &nbsp; by gaizka
+                </span>
+                <div className="grid grid-cols-2">
+                  <div className="h-screen">
+                    <ul className="block absolute lg:bottom-10 sm:bottom-20">
+                      <li className="lg:text-4xl sm:text-xl font-bold mb-4">
+                        github
+                      </li>
+                      <li className="lg:text-4xl sm:text-xl font-bold mb-4">
+                        twitter
+                      </li>
+                      <li className="lg:text-4xl sm:text-xl font-bold mb-4">
+                        instagram
+                      </li>
+                      <li className="lg:text-4xl sm:text-xl font-bold">
+                        linkedin
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="">
+                    <p>columa derecha</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </nav>
+    </header>
+  );
+}
