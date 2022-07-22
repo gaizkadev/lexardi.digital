@@ -1,116 +1,33 @@
-// full code link: https://codesandbox.io/s/tailwind-react-hamburger-menu-tjhfyx
-import Image from "next/image";
-import { useState } from "react";
-import { BsHeartHalf } from "react-icons/bs";
 import Link from "next/link";
-
-function Header() {
-  const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
-
+import Image from "next/image";
+export default function Header() {
   return (
-    <header className="flex items-center justify-between px-12 py-8">
-      <Link href="/">
-        <a>logo</a>
-      </Link>
-      <nav>
-        <div className="flex">
-          <div
-            className="space-y-2"
-            onClick={() => setIsNavOpen((prev) => !prev)} // toggle isNavOpen state on click
-          >
-            <span className="block h-0.5 w-8  bg-gray-900"></span>
-            <span className="block h-0.5 w-8  bg-gray-900"></span>
-          </div>
-
-          <div
-            className={
-              isNavOpen
-                ? "block absolute w-full top-0 left-0 flex-col z-10 bg-black h-full overflow-hidden"
-                : "hidden"
-            }
-          >
-            <div
-              className="absolute -top-1 -right-3 px-12 py-8"
-              onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
-            >
-              <svg
-                className="h-8 w-8 text-gray-900"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
-            </div>
-            <div className="grid grid-cols-2">
-              <div className="lg:px-12 lg:py-12 sm:px-6 sm:py-6">
-                <ul>
-                  <li className="text-white lg:text-8xl md:text-6xl sm:text-4xl mb-6">
-                    <Link href={"/blog"}>
-                      <a>Blog</a>
-                    </Link>
-                  </li>
-                  <li className="text-white lg:text-8xl md:text-6xl sm:text-4xl mb-6">
-                    <Link href={"/about"}>
-                      <a>About</a>
-                    </Link>
-                  </li>
-                  <li className="text-white lg:text-8xl md:text-6xl sm:text-4xl">
-                    <Link href={"/contact"}>
-                      <a>Contact</a>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div className="absolute bottom-10">
-                <Image
-                  src="/icons/adobeillustrator.svg"
-                  width={32}
-                  height={32}
-                  alt="Icon Illustrator"
-                />
-              </div>
-              <div className="bg-white lg:px-12 lg:py-12 sm:px-2">
-                <span className="flex items-center mb-8 lg:mt-8 sm:mt-20 lg:justify-start sm:justify-center">
-                  <Image src="/logo.png" width={32} height="32" alt="Logo" />
-                  <p className="ml-2 lg:text-lg sm:text-xs">
-                    gaizka | Frontend Developer
-                  </p>
-                </span>
-                <span className="bottom-10 right-10 absolute items-center flex text-xs font-bold">
-                  Coded with &nbsp; <BsHeartHalf /> &nbsp; by gaizka
-                </span>
-                <div className="grid grid-cols-2">
-                  <div className="h-screen">
-                    <ul className="block absolute lg:bottom-10 sm:bottom-20">
-                      <li className="lg:text-4xl sm:text-xl font-bold mb-4">
-                        github
-                      </li>
-                      <li className="lg:text-4xl sm:text-xl font-bold mb-4">
-                        twitter
-                      </li>
-                      <li className="lg:text-4xl sm:text-xl font-bold mb-4">
-                        instagram
-                      </li>
-                      <li className="lg:text-4xl sm:text-xl font-bold">
-                        linkedin
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="">
-                    <p>columa derecha</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <>
+      <div className="container mx-auto px-5 justify-between items-center pt-4">
+        <div className="flex items-center justify-between">
+          <Link href={"/"}>
+            <a>
+              <p className="link-underline link-underline-black hover:text-orange-500 text-2xl md:text-4xl font-bold tracking-tighter leading-tight text-gray-800">
+                home
+              </p>
+            </a>
+          </Link>
+          <Link href={"/about"}>
+            <a>
+              <p className="link-underline link-underline-black hover:text-orange-500 text-2xl md:text-4xl font-bold tracking-tighter leading-tight text-gray-800">
+                about
+              </p>
+            </a>
+          </Link>
+          <Link href={"/blog"}>
+            <a>
+              <p className="link-underline link-underline-black hover:text-orange-500 text-2xl md:text-4xl font-bold tracking-tighter leading-tight text-gray-800">
+                blog
+              </p>
+            </a>
+          </Link>
         </div>
-      </nav>
-    </header>
+      </div>
+    </>
   );
 }
-export default Header;
