@@ -1,11 +1,9 @@
-import Header from "../components/Header";
 import PostCard from "../components/PostCard";
 import getPosts from "../helpers/getPosts";
 
 export default function Blog({ posts }) {
   return (
     <>
-      <Header />
       <div>
         {posts.map((post) => (
           <PostCard

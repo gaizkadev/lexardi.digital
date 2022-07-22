@@ -10,8 +10,6 @@ import PostHero from "../components/PostHero";
 function Post({ data, content }) {
   return (
     <>
-      <Header />
-      <PostHero />
       <div className="flex mx-auto container">
         <div className="w-full">
           <h1 className="font-semibold my-4 text-3xl text-blue-700">
@@ -26,7 +24,6 @@ function Post({ data, content }) {
           <p className="">columnaderecha</p>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

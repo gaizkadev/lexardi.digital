@@ -4,7 +4,7 @@ import { useState } from "react";
 import { BsHeartHalf } from "react-icons/bs";
 import Link from "next/link";
 
-export default function Header() {
+function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
 
   return (
@@ -18,8 +18,8 @@ export default function Header() {
             className="space-y-2"
             onClick={() => setIsNavOpen((prev) => !prev)} // toggle isNavOpen state on click
           >
-            <span className="block h-0.5 w-8  bg-gray-600"></span>
-            <span className="block h-0.5 w-8  bg-gray-600"></span>
+            <span className="block h-0.5 w-8  bg-gray-900"></span>
+            <span className="block h-0.5 w-8  bg-gray-900"></span>
           </div>
 
           <div
@@ -34,7 +34,7 @@ export default function Header() {
               onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
             >
               <svg
-                className="h-8 w-8 text-gray-600"
+                className="h-8 w-8 text-gray-900"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -113,3 +113,4 @@ export default function Header() {
     </header>
   );
 }
+export default Header;
