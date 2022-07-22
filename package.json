@@ -1,5 +1,5 @@
 {
-  "name": "lexardi.digital",
+  "name": "next-blog",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,24 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "autoprefixer": "^10.4.7",
-    "next": "12.2.2",
-    "postcss": "^8.4.14",
+    "@tailwindcss/typography": "^0.5.4",
+    "gray-matter": "^4.0.3",
+    "next": "12.2.3",
+    "next-mdx-remote": "^4.1.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tailwindcss": "^3.1.6"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@mdx-js/loader": "^2.1.2",
-    "@next/mdx": "^12.2.2",
+    "autoprefixer": "^10.4.7",
     "eslint": "8.20.0",
-    "eslint-config-next": "12.2.2",
-    "fs": "^0.0.1-security",
-    "gray-matter": "^4.0.3",
-    "install": "^0.13.0",
-    "next-mdx-remote": "^4.1.0",
-    "npm": "^8.15.0",
-    "path": "^0.12.7",
-    "react-icons": "^4.4.0"
+    "eslint-config-next": "12.2.3",
+    "postcss": "^8.4.14",
+    "react-icons": "^4.4.0",
+    "tailwindcss": "^3.1.6"
   }
 }

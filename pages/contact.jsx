@@ -1,9 +1,3 @@
-import Header from "../components/Header";
-export default function About() {
-  return (
-    <>
-      <Header />
-      <p>Contact</p>
-    </>
-  );
+export default function contact() {
+  return <div>contact</div>;
 }

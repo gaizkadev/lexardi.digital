@@ -1,30 +1,29 @@
+import Link from "next/link";
 import Image from "next/image";
-const PostCard = ({ post }) => {
+
+function PostCard({ title, date, description, thumbnail, slug }) {
   return (
-    <div className="p-12 ">
+    <div className="p-12 border-b">
       <div className="flex flex-col gap-12 md:flex-row max-w-6xl">
         <Image
           alt="Image"
-          src={post.frontMatter.thumbnail}
+          src={thumbnail}
           className="object-cover"
           width={900}
           height={350}
         />
         <div className="items-center">
-          <h5 className="text-xs text-gray-400 my-4">
-            {post.frontMatter.date}
-          </h5>
-          <h5 className="text-4xl font-bold tracking-tight text-gray-900 my-4">
-            {post.frontMatter.title}
-          </h5>
-          <p className="mb-4 font-normal text-gray-600">
-            {post.frontMatter.subtitle}
-          </p>
-          <p className="my-4 text-xs text-gray-400">Leer más...</p>
+          <h2 className="font-bold text-2xl my-4">{title}</h2>
+          <time className="text-gray-400">{date}</time>
+          <p className="mt-4 italic">{description}</p>
+
+          <Link href="/[slug]" as={`/${slug}`}>
+            <a className="text-blue-500 mt-4 mb-2 block">Read more</a>
+          </Link>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default PostCard;
