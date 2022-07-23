@@ -17,8 +17,8 @@ function Burguer() {
             className="space-y-2"
             onClick={() => setIsNavOpen((prev) => !prev)} // toggle isNavOpen state on click
           >
-            <span className="block h-0.5 w-8  bg-gray-900"></span>
-            <span className="block h-0.5 w-8  bg-gray-900"></span>
+            <span className="block h-0.5 w-8  bg-gray-800"></span>
+            <span className="block h-0.5 w-8  bg-gray-800"></span>
           </div>
 
           <div
