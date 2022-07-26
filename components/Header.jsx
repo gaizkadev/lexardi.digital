@@ -18,7 +18,7 @@ function Header() {
               </p>
             </a>
           </Link>
-          <Link href={"/design"}>
+          <Link href={"/blog"}>
             <a>
               <p className="link-underline link-underline-black hover:text-orange-500 text-4xl md:text-4xl font-bold tracking-tighter leading-tight text-gray-800">
                 blog

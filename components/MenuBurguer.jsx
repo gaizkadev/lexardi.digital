@@ -7,7 +7,7 @@ function MenuBurguer() {
         <div className="lg:px-12 lg:py-12 sm:px-6 sm:py-12">
           <ul>
             <li className="text-white lg:text-8xl md:text-6xl sm:text-4xl mb-6">
-              <Link href={"/blog"}>
+              <Link href={"/design"}>
                 <a>Design</a>
               </Link>
             </li>
