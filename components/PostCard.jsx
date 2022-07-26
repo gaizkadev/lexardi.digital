@@ -4,7 +4,7 @@ import Image from "next/image";
 function PostCard({ title, date, description, thumbnail, slug }) {
   return (
     <div className="p-12 border-b">
-      <div className="flex flex-col gap-12 md:flex-row max-w-6xl">
+      <div className="flex flex-col gap-12 lg:flex-row md:flex-row max-w-6xl">
         <Image
           alt="Image"
           src={thumbnail}

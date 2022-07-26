@@ -11,10 +11,6 @@ function Home() {
       <Header />
       <Hero />
       <SubHero />
-      <SubHero />
-      <SubHero />
-      <SubHero />
-      <SubHero />
       <ScrollButton />
     </>
   );
